@@ -2,7 +2,7 @@
 
 **witpy** is a Python library that contains functions to parse *Wikipedia XML*. The library mainly focuses on extracting data from Revision pages in *JSON* format.
 
-- For revision pages:
+### For revision pages:
 The Revision XML file contains revision sections. Each revision section has a contributor and a publishing date.
 Further there are replies under that section commented by other users sorted according to their posting date.
 
