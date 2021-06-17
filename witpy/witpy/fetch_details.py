@@ -4,12 +4,16 @@ import json
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 
+
 analyzer = SentimentIntensityAnalyzer()
 
 
 def get_users(file):
 
     # returns a dict of users
+
+    ''' The function take the xml file name as the input with the '.xml' part and return a dictonary containing all the users along with their number of comments '''
+
 
     cluster = MongoClient()
     db = cluster["Revisions"]
@@ -26,6 +30,8 @@ def get_users(file):
 
 def max_user(file):
 
+    '''  The function take the xml file name as the input with the '.xml' part and return a tuple containing the name of the user with the most comments and it's number of comments '''
+
     users = get_users(file)
 
     max_user = max(users, key=users.get)
@@ -35,6 +41,9 @@ def max_user(file):
 
 def min_user(file):
 
+    '''  The function take the xml file name as the input with the '.xml' part and return a tuple containing the name of the user with the least comments and it's number of comments '''
+
+
     users = get_users(file)
 
     min_user = min(users, key=users.get)
@@ -43,6 +52,9 @@ def min_user(file):
 
 
 def user_comments(file):
+
+    '''  The function take the xml file name as the input with the '.xml' part and return a dictonary with users as the keys and their comments stored in a list as the corresponding value'''
+
 
     user_comments = dict()
 
@@ -63,6 +75,8 @@ def user_comments(file):
 
 
 def user_sentiment_analyzer(file, user=None):
+
+    '''  The function take the xml file name as the input with the '.xml' part as the first arguement. As the second arguement it you can provide a user's name if you want sentiment analysis only for that user otherwise it will return a dictonary containing all the users along with their rating score '''
 
     all_comments = user_comments(file)
 
@@ -107,6 +121,8 @@ def user_sentiment_analyzer(file, user=None):
 
 
 def document_sentiment_analyzer(file):
+
+    ''' The function take the xml file name as the input with the '.xml' part and return the sentiment analysis score for the whole document'''
 
     user_scores = dict()
 
