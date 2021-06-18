@@ -2,6 +2,7 @@ from xml.etree import ElementTree as ET
 
 import time
 import mwparserfromhell as hell
+import os
 
 from pymongo import MongoClient
 
@@ -23,8 +24,8 @@ def rev_parser(file, delete=False):
 
     if(delete):
         collection.drop()
-
-    tree = ET.parse(f'{file_name}')
+    dir = os.getcwd()
+    tree = ET.parse(f'{dir}/{file_name}')
     root = tree.getroot()
     page_id = root.find('id').text
 
@@ -261,7 +262,8 @@ def rev_parser(file, delete=False):
 
 
 def parser(file):
-
+    ''' Provide the full file name or the relative path to your current working directory to store it in you mongo databse 
+     Make sure your local mogo db connectin is active '''
     local_cluster = MongoClient()
     mydb = local_cluster["Revisions"]
 
