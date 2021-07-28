@@ -1,6 +1,6 @@
 setup.py
 witpy/__init__.py
-witpy/fecth_details.py
+witpy/fetch_details.py
 witpy/revision_parser.py
 witpy.egg-info/PKG-INFO
 witpy.egg-info/SOURCES.txt
