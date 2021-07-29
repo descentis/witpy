@@ -7,9 +7,13 @@
 
 Redirect to **witpy/dist** and run the following command to install the library
 ```cmd
-    pip install witpy-0.1.0-py3-none-any.whl
- ```
+  pip install witpy-1.0.1-py3-none-any.whl
+```
 
+To install all the dependencies for the library, Run thr following command in terminal
+```cmd
+  pip install -r requirements.txt
+```
 #### Setup A local Mongo Database 
 **For More details on this read the Mongo DB Setup section below**
     
@@ -32,27 +36,42 @@ from witpy.fetch_details import *
 ## Retrieving Functions 
 
 ### get_users 
-The function take the xml file name as the input with the '.xml' part and return a dictonary containing all the users along with their number of comments 
+The function takes the xml file name as the input without the '.xml' part and return a dictonary containing all the users along with their number of comments 
 
 ### max_user 
-The function take the xml file name as the input with the '.xml' part and return a tuple containing the name of the user with the most comments and it's number of comments
+The function takes the xml file name as the input without the '.xml' part and return a tuple containing the name of the user with the most comments and it's number of comments
 
 ### min_user
 
-The function take the xml file name as the input with the '.xml' part and return a tuple containing the name of the user with the least comments and it's number of comments
+The function takes the xml file name as the input without the '.xml' part and return a tuple containing the name of the user with the least comments and it's number of comments
 
 ### user_comments
 
-The function take the xml file name as the input with the '.xml' part and return a dictonary with users as the keys and their comments stored in a list as the corresponding value
+The function takes the xml file name as the input without the '.xml' part and return a dictonary with users as the keys and their comments stored in a list as the corresponding value
 
 ### user_sentiment_analyzer
 
-The function take the xml file name as the input with the '.xml' part as the first arguement. As the second arguement it you can provide a user's name if you want sentiment analysis only for that user otherwise it will return a dictonary containing all the users along with their rating score 
+The function takes the xml file name as the input without the '.xml' part as the first arguement. As the second arguement it you can provide a user's name if you want sentiment analysis only for that user otherwise it will return a dictonary containing all the users along with their rating score 
 
 ### document_sentiment_analyzer
 
-The function take the xml file name as the input with the '.xml' part and return the sentiment analysis score for the whole document
+The function takes the xml file name as the input without the '.xml' part and return the sentiment analysis score for the whole document
 
+### get_all_sections
+
+The functions takes xml file name as argument without the '.xml' part and returns a dictionary of section names as keys and list of comments as the value of a particular key(section name).
+
+### plotSectionComments
+
+The functions takes xml file name as argument without the '.xml' part and plots the number of comments v/s section name.
+
+### plotSectionCommentsStatistics
+
+The functions takes xml file name as argument without the '.xml' part and outputs box plots showing statistics of comments under all sections.
+
+### plotUserSentiments
+
+The functions takes xml file name as argument without the '.xml' part and plots user sentiment data.
 
 ### For revision pages:
 
@@ -66,7 +85,9 @@ The replies sometimes have links referenced to some other content or resource ov
 
 For each full revision xml, there is dedicated database in the _Local cluster_. After parsing of each revision section, its JSON is stored in the database as a separate collection.
 
+### For Plots:
 
+All the plots are made using ***Plotly***. Plotly is a python library used for plotting interactive **web** plots. 
 
 ## MongoDB Setup
 
