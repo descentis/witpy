@@ -10,7 +10,7 @@ Redirect to **witpy/dist** and run the following command to install the library
   pip install witpy-1.0.1-py3-none-any.whl
 ```
 
-To install all the dependencies for the library, Run thr following command in terminal
+To install all the dependencies for the library, Run the following command in terminal
 ```cmd
   pip install -r requirements.txt
 ```
