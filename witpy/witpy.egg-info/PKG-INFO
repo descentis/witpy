@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: witpy
-Version: 1.0.0
+Version: 1.0.1
 Summary: witpy is a Python library that contains functions to parse *Wikipedia XML*. The library mainly focuses on extracting data from Revision pages in *JSON* format.
 Home-page: UNKNOWN
 Author: UNKNOWN
